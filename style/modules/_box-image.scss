@@ -1,0 +1,69 @@
+.box-image-section{
+
+    .box{
+
+        background: darken($color-green, 10);
+        padding: 90px 0px 70px;
+
+        .box-text{
+            font-size: 175%;
+            color: white;
+            line-height: 1.5;
+            max-width: 600px;
+            margin: auto;
+            padding: 0px 20px;
+        }
+
+        .box-signature{
+            color: white;
+            font-style: italic;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+    }
+
+    .image{
+        position: relative;
+        background-size: cover;
+        background-position: center 0px;
+        background-repeat: no-repeat;
+        height: 550px;
+        //padding-bottom: 45%;
+        background-color: darken($color-green, 20);
+
+        &:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: darken($color-green, 20);
+            opacity: 0;
+            transition: opacity 500ms;
+        }
+
+        &.loading:before{
+            opacity: 1;
+        }
+
+        .image-border{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: lighten($color-green, 20);
+            height: 12px;
+
+            .image-cursor{
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                background: darken($color-green, 10);
+            }
+        }
+    }
+
+}

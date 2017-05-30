@@ -1,0 +1,24 @@
+@keyframes blinkingCursor{
+    0%{opacity:0;}
+    49%{opacity:0;}
+    50%{opacity:1;}
+    100%{opacity:1;}
+}
+
+.typeout-span{
+    display: inline;
+}
+
+.typeout-typed{}
+
+.typeout-remainder{
+    color: transparent;
+}
+.typeout-cursor{
+    animation: blinkingCursor linear infinite 1200ms;
+
+    &.hidden{
+        color: transparent;
+        animation: none;
+    }
+}

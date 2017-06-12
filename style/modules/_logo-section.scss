@@ -1,0 +1,52 @@
+.logo-section{
+    padding: 90px 0px 150px;
+
+    .section-wrapper{
+        max-width:$max-width;
+        margin: 0px auto;
+        padding: 0px;
+
+        .logo-header{
+            text-align: center;
+            font-size: 200%;
+            padding: 20px;
+            max-width:$max-width / 2;
+            margin: 0px auto;
+            line-height: 1.2;
+        }
+
+        .logo-sub-header{
+            padding: 0px 20px;
+            display: block;
+            text-align: center;
+            color: $color-green;
+            font-style: italic;
+            max-width:$max-width / 2;
+            margin: 0px auto;
+        }
+
+    }
+
+    .logo-section-box{
+        font-size: 0;
+        padding: 30px 10px;
+
+        .logo{
+            display: inline-block;
+            vertical-align: top;
+            height: 100px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            min-width: 50%;
+            margin: 10px 0px;
+            border: 20px solid transparent;
+
+            //@media(min-width: 480px){ min-width: 50%;}
+            @media(min-width: 640px){ min-width: 33.333%;}
+            @media(min-width: 768px){ min-width: 25%;}
+
+        }
+    }
+
+}

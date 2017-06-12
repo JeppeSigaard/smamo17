@@ -10,6 +10,8 @@ class FlickityComponent extends React.Component{
     updateSelected () {
         const index = this.flkty.selectedIndex;
         this.setState({selectedIndex: index });
+
+        if(typeof this.props.select === 'function') this.props.select(this);
     }
 
     componentWillUnmount(){
@@ -21,10 +23,10 @@ class FlickityComponent extends React.Component{
 
     componentDidMount () {
         if(this.props.name == null) return;
+        if(this.props.children == null) return;
 
         this.flkty = new Flickity('#' + this.props.name, this.props.options);
         this.flkty.on('cellSelect', this.updateSelected.bind(this));
-
     }
 
     render(){

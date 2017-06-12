@@ -3,8 +3,24 @@
 get_functions_part(array(
     'scripts',
     'piklist',
-    'options-api'
+    'options-api',
+    'team-api',
+    'info-api',
+    'logo-api',
+    'fp-txt-api',
+    'strong-shortcode'
 ));
+
+get_functions_part(array(
+    'team',
+    'fp-text',
+    'logo',
+),'post-types');
+
+get_functions_part(array(
+    'siteinfo',
+    'box-text',
+),'kirki');
 
 // get_functions_part([$filnavn],[$undermappe]);
 function smamo_include_functions_part_if_exists($fetch, $in = false){

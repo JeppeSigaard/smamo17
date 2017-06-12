@@ -15,12 +15,8 @@ class article extends React.Component {
         return (
             <div className="text-spinner-item">
                 <article className="text-spinner-article">
-                    <h2 className="article-heading">Lorem ipsum <strong>dolor sit</strong> amet, consectetu? </h2>
-                    <div className="article-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit aliquid, voluptates consectetur ab incidunt, sed numquam doloribus hic aperiam nisi repellat quod quidem sapiente porro ipsum quae rerum a magnam.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit aliquid, voluptates consectetur ab incidunt, sed numquam doloribus hic aperiam nisi repellat quod quidem sapiente porro ipsum quae rerum a magnam.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit aliquid, voluptates consectetur ab incidunt, sed numquam doloribus hic aperiam nisi repellat quod quidem sapiente porro ipsum quae rerum a magnam.</p>
-                    </div>
+                    {this.props.heading != null && <h2 className="article-heading" dangerouslySetInnerHTML={{__html: this.props.heading}}></h2>}
+                    {this.props.text != null && <div className="article-body" dangerouslySetInnerHTML={{__html: this.props.text}}></div>}
                 </article>
             </div>
         );

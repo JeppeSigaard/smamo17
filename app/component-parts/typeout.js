@@ -63,6 +63,7 @@ class typeout extends React.Component {
 
     componentWillReceiveProps(props){
         if(props.text == null) return;
+        if(props.text === this.props.text) return;
 
         this.animating = false;
 

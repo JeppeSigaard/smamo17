@@ -1,17 +1,18 @@
 .page-header{
-    position: absolute;
-    top: 100vh;
+    position: -webkit-sticky;
+    position: sticky;
+    top: calc(60px - 100vh);
     left: 0;
     right: 0;
     background: $color-green;
     color: white;
-    height: 60px;
+    height: 100vh;
     line-height: 60px;
     overflow: visible;
     z-index: 100;
-    transform: translateY(-100%);
+    //transform: translateY(-100%);
     border-bottom: 2px solid rgba(black,.2);
-
+/*
     &.fixed{
         top: 0;
         position: fixed;
@@ -19,10 +20,19 @@
         overflow: hidden;
         -webkit-backface-visibility: hidden;
     }
+*/
+
+    .header-inner{
+        position: absolute;
+        height: 60px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
 
     .header-wrap{
         position: relative;
-        height: inherit;
+        height: 60px;
         width: 100%;
         max-width: $max-width;
         margin: 0px auto;
@@ -34,8 +44,35 @@
         display: inline-block;
         vertical-align: top;
         a{
-            font-size: 13px;
-            margin-left: 20px;
+            font-size: 0px;
+            left: 20px;
+            position: relative;
+
+            svg{
+                display: inline-block;
+                width: 65px;
+                height: 60px;
+                padding: 16px;
+                fill: white;
+
+                &.icon-mail{
+                    padding: 13px;
+                }
+            }
+
+            @media(min-width: 480px){
+                left: 0px;
+                font-size: 13px;
+                margin-right: 20px;
+
+                svg{display: none;}
+
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+
+            @media(min-width: 640px){font-size: 15px;}
         }
     }
 }
@@ -47,7 +84,7 @@
     width: auto;
     position: relative;
     transform-origin: bottom left;
-    transition: transform 100ms;
+    transition: transform 60ms;
     transition-timing-function: cubic-bezier(0, .75, .5, 1);
 
     svg{
@@ -66,6 +103,5 @@
         line-height: inherit;
         display: inline-block;
         vertical-align: top;
-        font-size: 105%;
     }
 }

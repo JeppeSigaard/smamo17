@@ -16,22 +16,32 @@ class textSpinnerSection extends React.Component {
             contain: false,
         };
 
+        this.state = {
+            jsxArticles : null,
+        }
+
     }
 
     componentDidMount(){
+
+        Global.api.get('fp_text').then((resp) => {
+
+            let jsxArticles = [];
+            for (let article of resp){
+             jsxArticles.push(<Article key={'fb-text-' + article.ID} text={article.content} heading={article.title} />);
+            }
+
+            this.setState({jsxArticles : jsxArticles});
+        });
 
     }
 
     // Render
     render() {
         return (
-            <section className="text-spinner-section">
-                <Flickity name="text-spinner" options={this.flktyOptions}>
-                   <Article></Article>
-                   <Article></Article>
-                   <Article></Article>
-                   <Article></Article>
-                </Flickity>
+            <section className="text-spinner-section" id="about">
+                {this.state.jsxArticles != null &&
+                <Flickity name="text-spinner" options={this.flktyOptions} children={this.state.jsxArticles} />}
             </section>
         );
     }

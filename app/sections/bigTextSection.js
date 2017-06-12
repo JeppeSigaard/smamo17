@@ -30,7 +30,7 @@ class BigTextSection extends React.Component {
     // Render
     render() {
         return (
-            <section className="big-text-section full-screen">
+            <section className="big-text-section full-screen" id="banner">
                 <div className="section-wrap">
                     <div className="slogan">
                         <Typeout key="slogan" text={this.state.bigText} speed="80" cursor/>

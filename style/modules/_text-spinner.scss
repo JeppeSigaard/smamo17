@@ -1,5 +1,8 @@
 .text-spinner-section{
     padding: 160px 0px 200px;
+    @media(min-width: 768px){
+         padding: 240px 0px 300px;
+    }
 
     .flickity-prev-next-button {
 

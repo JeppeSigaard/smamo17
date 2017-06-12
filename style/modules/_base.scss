@@ -1,9 +1,18 @@
+html, body{
+    background-color: $color-green;
+}
+
+section{
+    position: relative;
+    background-color: white;
+}
+
 body{
     font-family: 'Lato', sans-serif;
-    position: fixed;
-    overflow: hidden;
-    pointer-events: none;
-    top: 0; bottom: 0; right: 0; left: 0;
+    box-sizing: border-box;
+    -webkit-backface-visibility: hidden;
+    *{box-sizing: inherit;-webkit-backface-visibility: inherit;}
+
 
     &.admin-bar #page-wrapper, &.admin-bar #page-content{
         top: 46px;
@@ -17,23 +26,6 @@ body{
     @media(min-width:960px){font-size: 17px;}
 }
 
-#page-wrapper,
-#page-content{
-    position: inherit;
-    overflow: hidden;
-    top: inherit; bottom: inherit; right: inherit; left: inherit;
-    box-sizing: border-box;
-    -webkit-backface-visibility: hidden;
-    *{box-sizing: inherit;-webkit-backface-visibility: inherit;}
-}
-
-#page-content{
-    -webkit-overflow-scrolling: touch;
-    overflow-x: hidden;
-    overflow-y: auto;
-    pointer-events: all;
-}
-
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: inherit;
 }
@@ -45,4 +37,9 @@ body{
 }
 :-moz-placeholder { /* Firefox 18- */
   color: inherit;
+}
+
+
+strong{
+    font-weight: 900;
 }

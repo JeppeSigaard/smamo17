@@ -25,11 +25,15 @@
 
     .image{
         position: relative;
-        background-size: cover;
-        background-position: center 0px;
-        background-repeat: no-repeat;
-        height: 550px;
-        //padding-bottom: 45%;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: -1px;
+    }
+
+    .image-container{
+        position: relative;
+        height: auto;
         background-color: darken($color-green, 20);
 
         &:before{
@@ -49,12 +53,13 @@
         }
 
         .image-border{
-            position: absolute;
-            bottom: 0;
+            position: -webkit-sticky;
+            position: sticky;
+            bottom: -1px;
             left: 0;
             right: 0;
             background: lighten($color-green, 20);
-            height: 12px;
+            height: 16px;
 
             .image-cursor{
                 position: absolute;

@@ -55,6 +55,22 @@ class dataHandler{
 
     }
 
+    get_info(){
+        return new Promise(( resolve, reject ) => {
+
+            let request = new XMLHttpRequest();
+
+            request.onload = (( response ) => {
+                let json = JSON.parse( response.target.response );
+                resolve( json );
+            });
+
+            request.open( 'GET', settings.api_url + 'wp/v2/site_info');
+            request.send();
+        });
+
+    }
+
     get_theme_mod(options){
         return new Promise(( resolve, reject ) => {
 

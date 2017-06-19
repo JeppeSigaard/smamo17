@@ -39,8 +39,8 @@ class PageHeader extends React.Component {
     }
 
     setLogoTransform(){
-        if(window.innerWidth > 768 ) this.logoTransform = { scale : 4, translateY : -100,};
-        else if(window.innerWidth > 640 ) this.logoTransform = { scale : 3.5, translateY : -100,};
+        if(window.innerWidth > 768 ) this.logoTransform = { scale : 3.5, translateY : -100,};
+        else if(window.innerWidth > 640 ) this.logoTransform = { scale : 3, translateY : -100,};
         else this.logoTransform = { scale : 3, translateY : -100,};
 
         this.handleScroll();

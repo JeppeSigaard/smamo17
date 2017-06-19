@@ -14,11 +14,29 @@ class textSpinnerSection extends React.Component {
         this.flktyOptions = {
             wrapAround : true,
             contain: false,
+            dragThreshold: 10,
         };
 
         this.state = {
             jsxArticles : null,
+            ready : false,
         }
+
+    }
+
+     handleScroll (e){
+
+        if(this.scrollHandling) return;
+        this.scrollHandling = true;
+
+        const scrollTop = _('body').get()[0].scrollTop,
+              winHeight = window.innerHeight,
+              sectionStart = _('#about').offset().top;
+
+        // Set ready on scroll
+        if ( scrollTop + winHeight > sectionStart + (winHeight * .6) ) this.setState({ready : true});
+
+        this.scrollHandling = false;
 
     }
 
@@ -34,12 +52,22 @@ class textSpinnerSection extends React.Component {
             this.setState({jsxArticles : jsxArticles});
         });
 
+        _(document).on('scroll',this.handleScroll.bind(this));
     }
+
+    componentWIllUnmount(){
+        _(document).off('scroll',this.handleScroll);
+    }
+
 
     // Render
     render() {
+
+        let className = 'text-spinner-section';
+        if(this.state.ready) className += ' ready';
+
         return (
-            <section className="text-spinner-section" id="about">
+            <section className={className} id="about">
                 {this.state.jsxArticles != null &&
                 <Flickity name="text-spinner" options={this.flktyOptions} children={this.state.jsxArticles} />}
             </section>

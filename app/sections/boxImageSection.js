@@ -36,7 +36,7 @@ class BoxImageSection extends React.Component {
               minor = scrollTop - imageStart;
 
         // Set ready on scroll
-        if ( scrollTop + winHeight > sectionStart ) this.setState({ready : true});
+        if ( scrollTop + winHeight > sectionStart + (winHeight * .6) ) this.setState({ready : true});
 
         // abort if outside
         if (minor < -20 || minor > imageHeight + 20){this.scrollHandling = false; return;}
@@ -78,16 +78,18 @@ class BoxImageSection extends React.Component {
         return (
             <section className="box-image-section" id="breaker">
                 <div className="box">
-                    <div className="box-text">
+                    <div className="box-inner">
+                        <div className="box-text">
                         <Typeout speed="50" cursor text={text}/>
+                        </div>
+                        <div className="box-signature">{this.state.signature}</div>
                     </div>
-                    <div className="box-signature">{this.state.signature}</div>
                 </div>
                 <div className={image_class} >
                     <img className="image" src={this.state.boxImage}/>
-                    <div className="image-border">
-                        <div className="image-cursor"></div>
-                    </div>
+                </div>
+                <div className="image-border">
+                    <div className="image-cursor"></div>
                 </div>
             </section>
         );

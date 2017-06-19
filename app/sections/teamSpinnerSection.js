@@ -16,6 +16,7 @@ class TeamSpinnerSection extends React.Component {
             pageDots : false,
             wrapAround : true,
             initialIndex : 0,
+            dragThreshold: 10,
         };
 
         this.flkt_middle = {
@@ -23,6 +24,7 @@ class TeamSpinnerSection extends React.Component {
             pageDots : false,
             wrapAround : true,
             initialIndex : 1,
+            dragThreshold: 10,
         };
 
         this.flkt_bottom = {
@@ -30,6 +32,7 @@ class TeamSpinnerSection extends React.Component {
             pageDots : false,
             wrapAround : true,
             initialIndex : 2,
+            dragThreshold: 10,
         };
 
         this.state = {
@@ -108,7 +111,7 @@ class TeamSpinnerSection extends React.Component {
 
             setTimeout(function(){
                  _('#team').addClass('match');
-            },500);
+            }, 900);
         }
 
         else this.setState( {

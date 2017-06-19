@@ -3,7 +3,16 @@
     .box{
 
         background: darken($color-green, 10);
-        padding: 90px 0px 70px;
+        height: 100vh;
+        position: relative;
+
+        .box-inner{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            transform: translateY(-50%);
+        }
 
         .box-text{
             font-size: 175%;
@@ -51,23 +60,24 @@
         &.loading:before{
             opacity: 1;
         }
+    }
 
-        .image-border{
-            position: -webkit-sticky;
-            position: sticky;
-            bottom: -1px;
+    .image-border{
+        position: -webkit-sticky;
+        position: sticky;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+        background: lighten($color-green, 20);
+        height: 24px;
+
+        .image-cursor{
+            border-right: 2px solid white;
+            position: absolute;
             left: 0;
-            right: 0;
-            background: lighten($color-green, 20);
-            height: 16px;
-
-            .image-cursor{
-                position: absolute;
-                left: 0;
-                top: 0;
-                bottom: 0;
-                background: darken($color-green, 10);
-            }
+            top: 0;
+            bottom: 0;
+            background: darken($color-green, 10);
         }
     }
 

@@ -16208,13 +16208,7 @@ module.exports = HookHandler;
 "use strict";
 
 
-var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-var _typeof = typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol" ? function (obj) {
-    return typeof obj === "undefined" ? "undefined" : _typeof2(obj);
-} : function (obj) {
-    return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof2(obj);
-};
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _createClass = function () {
     function defineProperties(target, props) {
@@ -16235,12 +16229,12 @@ function _classCallCheck(instance, Constructor) {
 function _possibleConstructorReturn(self, call) {
     if (!self) {
         throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }return call && ((typeof call === "undefined" ? "undefined" : _typeof2(call)) === "object" || typeof call === "function") ? call : self;
+    }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
 }
 
 function _inherits(subClass, superClass) {
     if (typeof superClass !== "function" && superClass !== null) {
-        throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof2(superClass)));
+        throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
     }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
 }
 
@@ -16272,37 +16266,16 @@ var HomePage = function (_React$Component) {
     function HomePage() {
         _classCallCheck(this, HomePage);
 
-        // Set main state
-        var _this = _possibleConstructorReturn(this, (HomePage.__proto__ || Object.getPrototypeOf(HomePage)).call(this));
-
-        Global.setMainState = _this.parsedSetState.bind(_this);
-        Global.text = TextPreprocessor;
-        return _this;
+        return _possibleConstructorReturn(this, (HomePage.__proto__ || Object.getPrototypeOf(HomePage)).call(this));
     }
 
-    // ParsedSetState
+    // Render
 
 
     _createClass(HomePage, [{
-        key: 'parsedSetState',
-        value: function parsedSetState(key, value) {
-            if ((typeof key === 'undefined' ? 'undefined' : _typeof(key)) !== 'object') {
-                this.state[key] = value;
-                this.forceUpdate();
-            } else {
-                this.setState(key);
-            }
-        }
-    }, {
-        key: 'componentDidMount',
-        value: function componentDidMount() {}
-
-        // Render
-
-    }, {
         key: 'render',
         value: function render() {
-            return React.createElement('div', { id: 'page-content' }, React.createElement(Header, { setMainState: this.parsedSetState.bind(this) }), React.createElement(BigTextSection, { setMainState: this.parsedSetState.bind(this) }), React.createElement(TextSpinnerSection, { setMainState: this.parsedSetState.bind(this) }), React.createElement(BoxImageSection, { setMainState: this.parsedSetState.bind(this) }), React.createElement(TeamSpinnerSection, { setMainState: this.parsedSetState.bind(this) }), React.createElement(Logosection, null));
+            return React.createElement('div', { id: 'page-content' }, React.createElement(Header, null), React.createElement(BigTextSection, null), React.createElement(TextSpinnerSection, null), React.createElement(BoxImageSection, null), React.createElement(TeamSpinnerSection, null), React.createElement(Logosection, null));
         }
     }]);
 
